@@ -1,5 +1,9 @@
 # CDUTDataChallenge16
 THis is a group project for 2019 Data Challenge.
+IDEA Maven工程  
+Maven -version:3.6.0
+java -version:1.8    
+database:mongoDB   
 返回的所有对象都封装在Message的extend中（extends是Map对象），返回数据格式为Json.
 
 1.导入表格数据excel.
