@@ -2,33 +2,49 @@ package com.shoulaxiao.entity;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-public class Record {
+import java.io.Serializable;
 
-    private static final long serialVersionUID=1L;
+public class Record implements Serializable {
 
+    private static final long serialVersionUID = 1L;
 
     @Id
-    private ObjectId id;
+    private String id;
+    @Field
     private String specimen;//标本
+    @Field
     private String pathology;//病理
+    @Field
     private String differentLevel;//分化等级
+    @Field
     private String iraits;//性状
+    @Field
     private String uperCut;//上切断
+    @Field
     private String lowerCut;//下切端
+    @Field
     private String baseCut;//基底切端
-    private int pathologyLevel;//病理等级
+    @Field
+    private String pathologyLevel;//病理等级
+    @Field
     private String tumorSize;//肿瘤大小
+    @Field
     private String infiltration;//侵润
+    @Field
     private String lymphTransfer;//淋巴结是否转移
+    @Field
     private String transferRatio;//转移比例
+    @Field
     private String vascularInvasion;//脉管侵犯
+    @Field
     private String nerveInvasion;//脉管侵犯
 
     public Record() {
     }
 
-    public Record(String specimen, String pathology, String differentLevel, String iraits, String uperCut, String lowerCut, String baseCut, int pathologyLevel, String tumorSize, String infiltration, String lymphTransfer, String transferRatio, String vascularInvasion, String nerveInvasion) {
+    public Record(String specimen, String pathology, String differentLevel, String iraits, String uperCut, String lowerCut, String baseCut, String pathologyLevel, String tumorSize, String infiltration, String lymphTransfer, String transferRatio, String vascularInvasion, String nerveInvasion) {
         this.specimen = specimen;
         this.pathology = pathology;
         this.differentLevel = differentLevel;
@@ -46,12 +62,18 @@ public class Record {
     }
 
 
-
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
 
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getSpecimen() {
         return specimen;
@@ -109,11 +131,11 @@ public class Record {
         this.baseCut = baseCut;
     }
 
-    public int getPathologyLevel() {
+    public String getPathologyLevel() {
         return pathologyLevel;
     }
 
-    public void setPathologyLevel(int pathologyLevel) {
+    public void setPathologyLevel(String pathologyLevel) {
         this.pathologyLevel = pathologyLevel;
     }
 

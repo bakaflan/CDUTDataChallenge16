@@ -4,6 +4,7 @@ import com.shoulaxiao.entity.Record;
 import com.shoulaxiao.service.RecordService;
 import com.shoulaxiao.util.mongo.RecordDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,11 +28,12 @@ public class RecordServiceImpl implements RecordService {
     }
 
 
-    public List<Record> findAll(){
-        return  recordDao.findAll();
+    public Page<Record> findList(Integer pageNum){
+        return recordDao.findList(pageNum);
     }
 
     public void deleteAll(){
         recordDao.deleteAll();
     }
+
 }
