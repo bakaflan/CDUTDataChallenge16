@@ -1,6 +1,7 @@
 package com.shoulaxiao.service;
 
 import com.shoulaxiao.entity.Record;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -18,7 +19,8 @@ public interface RecordService {
      */
     List<Record> findByFiledName(String filedName,String keyWord);
 
-    List<Record> findAll();
+    Page<Record> findList(Integer pageNum);
 
     void deleteAll();
+
 }

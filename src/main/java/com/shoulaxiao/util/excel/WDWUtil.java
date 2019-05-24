@@ -19,13 +19,17 @@ public class WDWUtil {
         return filePath.matches("^.+\\.(?i)(xlsx)$");
     }
 
+    public static boolean isCVS(String filePth){
+        return filePth.matches("^.+\\.(?i)(csv)$");
+    }
+
     /**
      * 验证是否是EXCEL文件
      * @param filePath
      * @return
      */
     public static boolean validateExcel(String filePath){
-        if (filePath == null || !(isExcel2003(filePath) || isExcel2007(filePath))){
+        if (filePath == null || !(isExcel2003(filePath) || isExcel2007(filePath)||isCVS(filePath))){
             return false;
         }
         return true;
